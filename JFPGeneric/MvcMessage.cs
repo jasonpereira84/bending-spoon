@@ -82,5 +82,6 @@ namespace JFPGeneric
         {
             get { return StringEnum.GetStringValue(TextType); }
         }
+
     }
 }
