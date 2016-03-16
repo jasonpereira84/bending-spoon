@@ -62,19 +62,44 @@ namespace JFPGeneric
             get { return _age; }
         }
 
-        public String Birthday4Display
+        //public String Birthday4Display
+        //{
+        //    get { return _date.ToString("MMMM d yyyy"); }
+        //}
+
+        //public String Birthday4DisplaySHORT
+        //{
+        //    get { return _date.ToString("MMM d yy"); }
+        //}
+
+        //public String Age4Display
+        //{
+        //    get { return Age.ToString(); }
+        //}
+
+        //public String BirthdayAge4Display
+        //{
+        //    get { return Birthday4Display + " (" + Age.ToString() + ")"; }
+        //}
+
+        //public String BirthdayAge4DisplaySHORT
+        //{
+        //    get { return Birthday4DisplaySHORT + " (" + Age.ToString() + ")"; }
+        //}
+
+        public String Birthday4Display(String formatString)
         {
-            get { return this.ToString(); }
+            return _date.ToString(formatString);
         }
 
-        public String Age4Display
+        public String Age4Display(String formatString)
         {
-            get { return Age.ToString(); }
+            return Age.Age4Display(formatString);
         }
 
-        public String BirthdayAge4Display
+        public String BirthdayAge4Display(String formatStringBIRTHDAY, String formatStringAGE, String separator)
         {
-            get { return this.ToString() + " (" + Age.ToString() + ")"; }
+            return Birthday4Display(formatStringBIRTHDAY) + separator + Age4Display(formatStringAGE);
         }
     }
 
@@ -103,6 +128,11 @@ namespace JFPGeneric
         public override string ToString()
         {
             return Years.ToString() + " years, " + Months.ToString() + " months, " + Days.ToString() + " days";
+        }
+
+        public String Age4Display(String formatString)
+        {
+            return String.Format(formatString, Years, Months, Days);
         }
 
         public static Age CalculateAge(DateTime startDate, DateTime endDate)

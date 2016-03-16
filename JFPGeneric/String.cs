@@ -52,6 +52,15 @@ namespace JFPGeneric
             return !x.IsNullOrEmpty();
         }
 
+        public static string TrimOrNull(this string source)
+        {
+            return source == null 
+                ? null 
+                : String.IsNullOrWhiteSpace(source) 
+                    ? null //if whitespace or empty return null
+                    : source.Trim();
+        }
+
         public static bool Contains(this string source, string toCheck, StringComparison comp)
         {
             if (string.IsNullOrEmpty(toCheck) || string.IsNullOrEmpty(source))

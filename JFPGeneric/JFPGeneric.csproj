@@ -57,6 +57,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -70,6 +71,7 @@
     <Compile Include="AuthorizeNet.cs" />
     <Compile Include="Birthday.cs" />
     <Compile Include="AppSettings.cs" />
+    <Compile Include="LinqExpressions.cs" />
     <Compile Include="IEnumerable.cs" />
     <Compile Include="Dictionary.cs" />
     <Compile Include="Miscellaneous.cs" />

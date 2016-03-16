@@ -14,6 +14,7 @@ namespace JFPGeneric
 {
     public partial class Functions
     {
+        /*
         public static String GetUniquePersonName(String FirstName, String LastName, String MiddleName, String PreferredName, String Salutation)
         {//dont use null trim, need to see if extra spaces exist
             string retVal = string.Empty;
@@ -22,6 +23,21 @@ namespace JFPGeneric
             retVal += (!String.IsNullOrWhiteSpace(FirstName)) ? FirstName + " " : string.Empty;
             retVal += (!String.IsNullOrWhiteSpace(PreferredName)) ? "(" + PreferredName + ")" : string.Empty;
             return retVal;
+        }
+        */
+
+        public static String GetUniquePersonName(String FirstName, String LastName, String PreferredName = null)
+        {
+            var retVal = new StringBuilder(LastName + ", ");
+            if(String.IsNullOrWhiteSpace(FirstName))
+                retVal.Append("NoFirstName");
+            else
+            {
+                retVal.Append(FirstName);
+                if (!String.IsNullOrWhiteSpace(PreferredName))
+                    retVal.Append(" (" + FirstName + ")");
+            }
+            return retVal.ToString();
         }
 
         /// <summary>
