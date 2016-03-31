@@ -64,7 +64,7 @@ namespace JFPGeneric
 
         public static MvcMessage Warning(String message)
         {
-            return new MvcMessage("FALSE", message, BootstrapTextEnum.Warning);
+            return new MvcMessage("FALSE", message, BootstrapTextEnum.DAnger);
         }
 
         public static MvcMessage Danger(String message)
