@@ -52,5 +52,38 @@ namespace JFPGeneric
         //    }
         //    return code;
         //}
+
+        public static Char[] XORWithTime(Byte[] data, TimeSpan buffer)
+        {
+            var retVal = new List<Char>();
+            try
+            {
+                var temp3 = BitConverter.GetBytes(DateTime.UtcNow.RoundUp(buffer).ToBinary());
+                for (int i = 0; i < data.Length; i++)
+                    retVal.Add(AlphanumericChars[((i > (temp3.Length - 1) ? (byte)0x00 : temp3[i]) ^ data[i]) % 61]);
+            }
+            catch (Exception) { retVal = new List<Char>(); }
+            return retVal.ToArray();
+        }
+
+        public static Char[] XORWithTime30s(Byte[] data)
+        {
+            return XORWithTime(data, TimeSpan.FromSeconds(30));
+        }
+
+        public static Char[] XORWithTime1m(Byte[] data)
+        {
+            return XORWithTime(data, TimeSpan.FromMinutes(1));
+        }
+
+        public static Char[] XORWithTime5m(Byte[] data)
+        {
+            return XORWithTime(data, TimeSpan.FromMinutes(5));
+        }
+
+        public static Char[] XORWithTime15m(Byte[] data)
+        {
+            return XORWithTime(data, TimeSpan.FromMinutes(15));
+        }
     }
 }

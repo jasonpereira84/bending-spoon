@@ -82,6 +82,11 @@ namespace JFPGeneric
             var timeSpan = (utcDateTime - new DateTime(1970, 1, 1, 0, 0, 0));
             return (Int64)timeSpan.TotalSeconds;
         }
+
+        public static DateTime RoundUp(DateTime date, TimeSpan d)
+        {
+            return new DateTime(((date.Ticks + d.Ticks - 1) / d.Ticks) * d.Ticks);
+        }
     }
 
     public static class DateTimeExtensions
@@ -233,6 +238,11 @@ namespace JFPGeneric
                     return newDate.FirstDateOfMonth();
                 else
                     return date.LastDateOfMonth();
+        }
+
+        public static DateTime RoundUp(this DateTime date, TimeSpan d)
+        {
+            return Functions.RoundUp(date, d);
         }
     }
 }

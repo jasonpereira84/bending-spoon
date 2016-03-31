@@ -46,6 +46,9 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\..\StudioPro.WebApp.Main\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.1\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="MoreLinq">
       <HintPath>..\..\StudioPro_WEB\packages\morelinq.1.1.0\lib\net35\MoreLinq.dll</HintPath>
     </Reference>
@@ -69,12 +72,14 @@
   <ItemGroup>
     <Compile Include="AutoReleaseCOMObject.cs" />
     <Compile Include="AuthorizeNet.cs" />
+    <Compile Include="Base32Encoder.cs" />
     <Compile Include="Birthday.cs" />
     <Compile Include="AppSettings.cs" />
     <Compile Include="LinqExpressions.cs" />
     <Compile Include="IEnumerable.cs" />
     <Compile Include="Dictionary.cs" />
     <Compile Include="Miscellaneous.cs" />
+    <Compile Include="HashWithCode.cs" />
     <Compile Include="Time.cs" />
     <Compile Include="MvcMessage.cs" />
     <Compile Include="String.cs" />
@@ -96,6 +101,7 @@
     <Compile Include="PlayingCardHash.cs" />
     <Compile Include="Consecutive.cs" />
     <Compile Include="TemporaryFiles.cs" />
+    <Compile Include="RandomCode.cs" />
     <Compile Include="UniqueCode.cs" />
     <Compile Include="Result.cs" />
   </ItemGroup>
